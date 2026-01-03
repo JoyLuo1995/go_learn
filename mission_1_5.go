@@ -22,5 +22,5 @@ func main() {
     nums := []int{1, 1, 2, 2, 3, 3, 3, 4}
     k := Remove_Duplicates(nums)
     fmt.Println("k =", k)
-    fmt.Println("前 k 个元素:", nums[:k])  
+    fmt.Println("前 k 个元素:", nums[:k])  // 输出前 k 个元素
 }
