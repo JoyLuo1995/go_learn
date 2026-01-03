@@ -10,7 +10,7 @@ func IncreaseTen(numPtr *int) {
 
 func MultiplyTwo(slicePtr *[]int) {
 	for i := range *slicePtr {
-		(*slicePtr)[i]  = (*slicePtr)[i] * 2
+		(*slicePtr)[i] = (*slicePtr)[i] * 2
 	}
 }
 
@@ -25,7 +25,7 @@ func main() {
 
 // 题目 ：实现一个函数，接收一个整数切片的指针，将切片中的每个元素乘以2。
 // 考察点 ：指针运算、切片操作。
-	numbers := []int{1, 2, 3, 4, 5}
+	numbers := []int{1, 4, 3, 4, 5}
 	fmt.Println("Before:", numbers)
 	MultiplyTwo(&numbers)
 	fmt.Println("After:", numbers)
