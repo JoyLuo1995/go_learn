@@ -24,9 +24,6 @@ type Circle struct {
 	Radius float64
 }
 
-type Triangle struct {
-	Base, Height float64
-}
 
 // Rectangle 实现 Area 方法，返回矩形面积
 func (r Rectangle) Area() float64 {
@@ -45,19 +42,36 @@ func (c Circle) Perimeter() float64 {
 	return 2 * math.Pi * c.Radius
 }
 
-func (t Triangle) Area() float64 {
-	return 0.5 * t.Base * t.Height
+
+
+type Person struct {
+    Name string
+    Age  int
 }
 
-func (t Triangle) Perimeter() string {
-	return "Perimeter calculation not implemented"
+type Employee struct {
+    Person 
+    EmployeeID string
 }
+
+func (e Employee) PrintInfo() (string, int, string) {
+    return e.Name, e.Age, e.EmployeeID
+
+}
+
+
 
 func main() {
 	rect := Rectangle{Width: 5, Height: 10}
 	circ := Circle{Radius: 7}
-	tri := Triangle{Base: 6, Height: 8}
 	fmt.Printf("Rectangle Area: %.2f, Perimeter: %.2f\n", rect.Area(), rect.Perimeter())
 	fmt.Printf("Circle Area: %.2f, Perimeter: %.2f\n", circ.Area(), circ.Perimeter())
-	fmt.Printf("Triangle Area: %.2f, Perimeter: %s\n", tri.Area(), tri.Perimeter())
+
+    emp := Employee{
+        Person:    Person{Name: "Joy", Age: 30},
+        EmployeeID: "E123", //为什么这里要加逗号
+    }
+	name, age, employeeID := emp.PrintInfo()
+	fmt.Println("Employee Info:", name, age, employeeID)
+ 
 }
